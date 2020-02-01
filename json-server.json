@@ -1,0 +1,5 @@
+{
+  "port": 1337,
+  "static": "./node_modules/json-server/dist/",
+  "watch": false
+}

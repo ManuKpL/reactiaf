@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "concurrently": "^5.1.0",
     "esm": "^3.2.25",
     "json-server": "^0.15.1",
@@ -43,6 +44,7 @@
     "cross-var": "^1.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-flowtype": "^3.0.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.19.1"
   },
   "optionalDependencies": {

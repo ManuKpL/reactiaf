@@ -1,36 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useContext } from 'react';
 
 import './HousesList.scss';
 
 import { HouseCard } from './HouseCard';
+import { ListHousesContext } from './listHouses';
 
-const HousesList = () => {
-  const [houses, setHouses] = useState([]);
-  const [hasData, setHasData] = useState(false);
+export const HousesList = () => {
+  const { houses, isLoading } = useContext(ListHousesContext);
 
-  useEffect(function componentDidMount() {
-    (async function fetchHouses() {
-      const { data: houses } = await axios.get('http://localhost:1337/houses');
-      setTimeout(() => {
-        setHouses(houses || []);
-      }, 300);
-    })();
-  }, []);
+  if (isLoading) {
+    return <>Loading...</>;
+  }
 
-  useEffect(
-    function housesDidChange() {
-      setHasData(!!(houses && houses.length));
-    },
-    [houses],
-  );
+  if (!houses) {
+    return <>No Data...</>;
+  }
 
   return (
     <section className="houses-list">
-      {hasData && houses.map(house => <HouseCard key={house.id} house={house} />)}
-      {!hasData && <>Loading...</>}
+      {houses.map(house => (
+        <HouseCard key={house.id} house={house} />
+      ))}
     </section>
   );
 };
-
-export { HousesList };

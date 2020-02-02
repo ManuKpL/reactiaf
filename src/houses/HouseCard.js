@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './HouseCard.scss';
 
-const HouseCard = ({ house }) => {
+export const HouseCard = ({ house }) => {
   return (
     <div className="house-card">
       <h2>{house.name}</h2>
@@ -15,5 +15,3 @@ const HouseCard = ({ house }) => {
 HouseCard.propTypes = {
   house: PropTypes.object.isRequired,
 };
-
-export { HouseCard };

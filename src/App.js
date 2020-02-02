@@ -3,7 +3,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { HousesList } from './houses';
+import { HousesList, ListHousesProvider } from './houses';
 
 const App = () => (
   <div className="App">
@@ -11,7 +11,9 @@ const App = () => (
       <img data-testid="app-logo" src={logo} className="App-logo" alt="logo" />
     </header>
     <main>
-      <HousesList />
+      <ListHousesProvider>
+        <HousesList />
+      </ListHousesProvider>
     </main>
   </div>
 );

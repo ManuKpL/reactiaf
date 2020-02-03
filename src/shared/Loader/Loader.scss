@@ -1,0 +1,22 @@
+span.loader {
+  width: 7vmin;
+  height: 7vmin;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 -3px 1px 1px #61dafb;
+  animation: rotate 2s linear infinite;
+  margin: 0.5rem;
+
+  &.centered {
+    margin: 0.5rem auto;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,7 +1,48 @@
-div.house-card h2 {
-  margin-bottom: 0;
-}
+@import 'src/shared/breakpoints';
 
-div.house-card p {
-  margin-top: 0;
+div.house-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+  font-size: 0.8rem;
+  text-align: left;
+  border-radius: 2px;
+  background-color: #fdfdfd;
+  box-shadow: 3px 4px 9px 2px #ccc, 1px 1px 3px 0px #ccc;
+
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    border-radius: 0px;
+    background-color: #fff;
+    box-shadow: 3px 4px 9px 2px #bbb, 1px 1px 3px 0px #bbb;
+  }
+
+  h2,
+  h3 {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  dt {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.7rem;
+  }
+
+  dd {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: $smaller) {
+    grid-template-columns: 1fr;
+    img {
+      max-width: 90vw;
+      margin: auto;
+    }
+  }
 }
